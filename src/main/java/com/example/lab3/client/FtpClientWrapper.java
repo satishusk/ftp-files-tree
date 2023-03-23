@@ -3,11 +3,13 @@ package com.example.lab3.client;
 import lombok.Data;
 import org.apache.commons.net.PrintCommandListener;
 import org.apache.commons.net.ftp.FTPClient;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
 @Data
+@Component
 public class FtpClientWrapper {
   private FTPClient ftpClient;
 

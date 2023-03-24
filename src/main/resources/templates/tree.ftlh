@@ -44,12 +44,16 @@
 	                 required><br><br>
 	<input type="submit" value="Display directory"><br><br><br>
 </form>
-
 Directory:<br><br>
-<#if directory??>
-    <#list directory as file>
-			<div class="file">${file}<br></div>
-    </#list>
+<#if !error??>
+    <#if directory??>
+        <#list directory as file>
+					<div class="file">${file}<br></div>
+        </#list>
+    </#if>
+<#else>
+		${error}
 </#if>
+
 </body>
 </html>

@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en">
+<meta charset="windows-1251">
+
 <head>
 	<title>Lab3</title>
 </head>

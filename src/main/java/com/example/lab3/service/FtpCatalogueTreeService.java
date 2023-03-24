@@ -5,6 +5,8 @@ import org.apache.commons.net.ftp.FTPFile;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +38,7 @@ public class FtpCatalogueTreeService {
     }
 
     for (FTPFile aFile : subFiles) {
-      String currentFileName = aFile.getName();
+      String currentFileName = new String(aFile.getName().getBytes(Charset.forName("Cp1251")));
       if (currentFileName.equals(".") || currentFileName.equals("..")) {
         continue;
       }

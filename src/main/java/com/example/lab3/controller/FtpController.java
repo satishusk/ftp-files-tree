@@ -26,11 +26,11 @@ public class FtpController {
 
   @PostMapping("/tree")
   public String filesTree(
-    @RequestParam("hostname") String hostname, @RequestParam("port") Integer port,
+    @RequestParam("hostname") String hostname, @RequestParam("port") String port,
     @RequestParam("username") String username, @RequestParam("password") String password,
     Model model
   ) throws IOException {
-    ftpClientWrapper.connect(hostname, port, username, password);
+    ftpClientWrapper.connect(hostname, Integer.parseInt(port), username, password);
 
     Map<String, Object> attributes = Map.of(
       "hostname", hostname,

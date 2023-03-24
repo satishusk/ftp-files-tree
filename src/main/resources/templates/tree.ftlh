@@ -31,23 +31,24 @@
 <hr>
 <form action="/tree" method="post">
 	Hostname: <input type="text" name="hostname" placeholder="Hostname"
-	                 value="<#if hostname??>${hostname}<#else>91.222.128.11</#if>" size="50"
+	                 value="<#if hostname??>${hostname}<#else>91.222.128.11</#if>" size="70"
 	                 required><br><br>
 
-	Port: <input type="number" name="port" placeholder="Port" step="1"
-	             value="<#if port??>${port}<#else >21</#if>" min="0" max="65535"
+	Port: <input type="text" name="port" placeholder="Port" step="1"
+	             value="<#if port??>${port}<#else >21</#if>" size="70" min="0" max="65535"
 	             required><br><br>
 
 	Username: <input type="text" name="username" placeholder="Login"
-	              value="<#if username??>${username}</#if>" size="50"
+	              value="<#if username??>${username}</#if>" size="70"
 	              required><br><br>
 
-	Password: <input type="text" name="password" placeholder="Password" size="50"
+	Password: <input type="text" name="password" placeholder="Password" size="70"
 	                 required><br><br>
 	<input type="submit" value="Display directory"><br><br><br>
 </form>
-Directory:<br><br>
+
 <#if !error??>
+	Directory:<br><br>
     <#if directory??>
         <#list directory as file>
 					<div class="file">${file}<br></div>
